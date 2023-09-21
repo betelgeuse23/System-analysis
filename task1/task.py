@@ -7,8 +7,8 @@ def get_cell_value(file_path, row, column):
         with open(file_path, newline='') as csvfile:
             csv_reader = csv.reader(csvfile)
             data = list(csv_reader)
-            if 1 <= row <= len(data) and 1 <= column <= len(data[0]):
-                cell_value = data[row - 1][column - 1]
+            if 0 <= row < len(data) and 0 <= column < len(data[0]):
+                cell_value = data[row][column]
                 return cell_value
             else:
                 return "Такой столбец и строка не найдены."
